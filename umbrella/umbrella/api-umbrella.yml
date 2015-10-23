@@ -1,0 +1,22 @@
+services:
+  - general_db
+  - log_db
+  - router
+  - web
+web:
+  admin:
+    initial_superusers:
+      - admin.user@example.com # Change this to your email address
+    auth_strategies:
+      enabled:
+        - persona
+
+elasticsearch:
+  hosts:
+    - http://127.0.0.1:14002
+mongodb:
+  url: mongodb://127.0.0.1:14001/api_umbrella
+nginx:
+  workers: 4
+gatekeeper:
+  workers: 4
